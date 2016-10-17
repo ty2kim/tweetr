@@ -24,9 +24,30 @@ body {
 main {
   width: 450px;
   margin: auto;
-  background-color: #ffffff;
-  position: relative;
-  top: 140px;
+  background-color: #fff;
+  padding-top: 140px;
+}
+
+.new-tweet {
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 2em;
+  border: 1px solid #d3d3d3;
+  padding: 10px;
+}
+
+.new-tweet h2 {
+  border-bottom: 2px solid #244751;
+  margin-top: 0;
+}
+
+.new-tweet textarea {
+  width: 100%;
+  padding: 5px;
+}
+
+.new-tweet .counter {
+  float: right;
 }
 /*
  * Additional CSS can be defined below or in other CSS files, as per instructions
