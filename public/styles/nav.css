@@ -5,7 +5,7 @@
   height: 80px;
   left: 0;
   right: 0;
-  padding: 0, 2em, 0, 2em;
+  padding: 0 2em 0 2em;
 }
 
 #nav-bar .logo {
@@ -16,5 +16,7 @@
 
 #nav-bar .header {
   float: left;
-  line-height: 200%;
+  font-size: 2em;
+  line-height: 80px;
+  padding-left: 10px;
 }
