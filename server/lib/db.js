@@ -1,6 +1,6 @@
-"use strict";
+'use strict';
 
-const initialTweets = require("./tweets");
+const initialTweets = require('./tweets');
 
 const db = { tweets: initialTweets };
 
@@ -11,11 +11,10 @@ const dbMethods = {
     return true;
   },
 
-  getTweets: () => {
-    return db.tweets.sort(function(a, b) { return a.created_at - b.created_at });
-  }
-
-}
+  getTweets: function () {
+    return db.tweets.sort(function (a, b) { return a.created_at - b.created_at; });
+  },
+};
 
 module.exports = {
 
@@ -23,6 +22,6 @@ module.exports = {
 
     onConnect(dbMethods);
 
-  }
+  },
 
-}
+};

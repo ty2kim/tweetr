@@ -1,20 +1,19 @@
-"use strict";
+'use strict';
 
-const User    = require("../lib/user-helper")
+const User    = require('../lib/user-helper');
 const express = require('express');
 const tweets  = express.Router();
 
-module.exports = function(db) {
+module.exports = function (db) {
 
-  tweets.get("/", function(req, res) {
+  tweets.get('/', function (req, res) {
     let tweets = db.getTweets();
+
     // simulate delay
-    setTimeout(() => {
-      return res.json(tweets);
-    }, 300);
+    setTimeout(function () { return res.json(tweets); }, 300);
   });
 
-  tweets.post("/", function(req, res) {
+  tweets.post('/', function (req, res) {
     if (!req.body.text) {
       res.status(400);
       return res.send("{'error': 'invalid request'}\n");
@@ -24,9 +23,9 @@ module.exports = function(db) {
     const tweet = {
       user: user,
       content: {
-        text: req.body.text
+        text: req.body.text,
       },
-      created_at: Date.now()
+      created_at: Date.now(),
     };
     db.saveTweet(tweet);
     return res.send();
@@ -34,4 +33,4 @@ module.exports = function(db) {
 
   return tweets;
 
-}
+};
