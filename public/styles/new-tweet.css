@@ -1,4 +1,4 @@
-.new-tweet {
+section.new-tweet {
   background-color: #eee;
   border-radius: 5px;
   margin: 2em;
@@ -6,20 +6,20 @@
   padding: 10px;
 }
 
-.new-tweet h2 {
+section.new-tweet h2 {
   border-bottom: 2px solid #244751;
   margin-top: 0;
 }
 
-.new-tweet textarea {
+section.new-tweet textarea {
   width: 100%;
   padding: 5px;
 }
 
-.new-tweet .counter {
+section.new-tweet .counter {
   float: right;
 }
 
-.new-tweet .exceed-limit {
+section.new-tweet .exceed-limit {
   color: #ff0000;
 }

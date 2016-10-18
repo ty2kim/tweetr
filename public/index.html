@@ -19,6 +19,9 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- All Tweets CSS -->
+    <link rel="stylesheet" href="/styles/all-tweets.css" type="text/css" />
+
     <!-- External JS -->
     <script type="text/javascript" src="/vendor/jquery-2.2.3.min.js"></script>
 
@@ -26,11 +29,13 @@
     <script type="text/javascript" src="/scripts/app.js"></script>
 
     <!-- Composer Char Counter JS -->
-    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>    
+    <script type="text/javascript" src="/scripts/composer-char-counter.js"></script>
+
+    <!-- Hover Tweets JS -->
+    <script type="text/javascript" src="/scripts/hover-tweets.js"></script>
+
   </head>
-
   <body>
-
     <!-- Top nav bar (fixed) -->
     <nav id="nav-bar">
       <img class="logo" src="/images/bird.png">
@@ -47,7 +52,22 @@
             <span class="counter">140</span>
           </form>
       </section>
+      <section id="all-tweets">
+        <article class="tweet">
+          <header>
+            <img class="avatar" src="/images/sample.png">
+            <h2 class="some-name">Bill Fields</h2>
+            <span class="handle">@MyFields</span>
+          </header>
+          <p class="tweet-text">
+            asfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfafasfasfasfaf
+          </p>
+          <footer>
+            <span class="days-ago">10 days ago</span>
+            <img class="like" src="/images/like.png">
+          </footer>
+        </article>
+      </section>
     </main>
-
   </body>
 </html>
