@@ -19,3 +19,7 @@
 .new-tweet .counter {
   float: right;
 }
+
+.new-tweet .exceed-limit {
+  color: #ff0000;
+}
