@@ -4,7 +4,7 @@ article.tweet {
   border: 1px solid #d3d3d3;
 }
 
-article.tweet:hover {
+article:hover {
   border: 1px solid black;
   -webkit-filter: saturate(500%);
 }
@@ -17,7 +17,7 @@ article.tweet header {
   height: 70px;
 }
 
-article.tweet .avatar {
+article.tweet header .avatar {
   border-radius: 5px;
   width: 50px;
   height: 50px;
@@ -25,17 +25,17 @@ article.tweet .avatar {
   float: left;
 }
 
-article.tweet .some-name {
+article.tweet header .name {
   margin-top: 10px;
   float: left;
 }
 
-article.tweet .handle {
+article.tweet header .handle {
   margin: 20px 10px 0 0;
   float: right;
 
 }
-article.tweet .tweet-text {
+article.tweet p.tweet-text {
   margin: 0;
   padding: 30px 20px 30px 20px;
   border-bottom: 1px solid #d3d3d3;
@@ -47,7 +47,7 @@ article.tweet footer {
   padding: 10px;
 }
 
-article.tweet .like {
+article.tweet footer .social {
   height: 20px;
   width: auto;
   float: right;
