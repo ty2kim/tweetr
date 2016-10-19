@@ -11,7 +11,7 @@ $(document).ready(function () {
     var $text = $(this).find('textarea');
     if (counter < 0) {
       alert('maximum tweet is 140');
-    } else if (!$text.text()) {
+    } else if (!$text.val()) {
       alert('you didn\'t write anything');
     } else {
       var queryStr = $text.serialize();
