@@ -7,7 +7,7 @@ const tweets  = express.Router();
 // difference between express(), express.Router()
 // http://stackoverflow.com/questions/28305120/differences-between-express-router-and-app-get
 
-module.exports = function (db) { // db = dbMethods from db.js
+module.exports = function (db) { // db = dbMethods object(function) from db.js
 
   tweets.get('/', function (req, res) {
     let tweets = db.getTweets();
