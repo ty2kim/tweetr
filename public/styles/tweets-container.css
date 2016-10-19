@@ -2,11 +2,12 @@ article.tweet {
   border-radius: 5px;
   margin: 2em;
   border: 1px solid #d3d3d3;
+  opacity: 0.8;
 }
 
-article:hover {
-  border: 1px solid black;
-  -webkit-filter: saturate(500%);
+article.hover {
+  border: 1px solid #808080;
+  opacity: 1;
 }
 
 article.tweet header {
@@ -32,9 +33,11 @@ article.tweet header .name {
 
 article.tweet header .handle {
   margin: 20px 10px 0 0;
+  color: #808080;
+  font-size: 0.8em;
   float: right;
-
 }
+
 article.tweet p.tweet-text {
   margin: 0;
   padding: 30px 20px 30px 20px;
@@ -45,6 +48,10 @@ article.tweet p.tweet-text {
 
 article.tweet footer {
   padding: 10px;
+}
+
+article.tweet footer .days-ago {
+  font-size: 0.7em;
 }
 
 article.tweet footer .social {
