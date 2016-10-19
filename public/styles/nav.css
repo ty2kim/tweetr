@@ -23,4 +23,19 @@
 
 #nav-bar .button {
   float: right;
+  background-color: #d0fff8;
+  border: solid 2px #000;
+  border-radius: 5px;
+  margin: 10px 0 10px 0;
+  padding: 10px;
+  width: 150px;
+  height: 60px;
+  color: #00a087;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+#nav-bar .button:hover {
+  background-color: #fff;
+  cursor: pointer;
 }
