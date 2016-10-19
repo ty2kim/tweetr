@@ -19,6 +19,7 @@ $(document).ready(function () {
         url: '/tweets',
         method: 'POST',
         data: queryStr,
+        success: loadTweets(),
       });
     }
   });
