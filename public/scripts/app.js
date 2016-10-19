@@ -55,6 +55,17 @@ var data =
 ];
 
 $(document).ready(function () {
+  $('.new-tweet').on('submit', 'form', function (event) {
+    event.preventDefault();
+    var $text = $(this).find('textarea');
+    var queryStr = $text.serialize();
+    $.ajax({
+      url: '/tweets',
+      method: 'POST',
+      data: queryStr,
+    });
+  });
+
   function renderTweets(tweets) {
     // loops through tweets
     // calls createTweetElement for each tweet
@@ -63,6 +74,10 @@ $(document).ready(function () {
       var $tweet = createTweetElement(tweet);
       $('#tweets-container').append($tweet);
     });
+
+    // faster way
+    // createTweetElement returns list of tweets(html) using map
+    // $('#tweets-container').append(tweets.join(''));
   }
 
   function createTweetElement(tweet) {
