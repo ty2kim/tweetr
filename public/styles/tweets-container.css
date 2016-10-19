@@ -1,16 +1,20 @@
-article.tweet {
+#tweets-container article.tweet {
   border-radius: 5px;
   margin: 2em;
   border: 1px solid #d3d3d3;
   opacity: 0.8;
 }
 
-article.hover {
+#tweets-container article:hover {
   border: 1px solid #808080;
   opacity: 1;
 }
 
-article.tweet header {
+#tweets-container article:hover footer .social {
+  visibility: visible;
+}
+
+#tweets-container article.tweet header {
   position: relative;
   border-radius: 5px 5px 0 0;
   background-color: #fffff0;
@@ -18,7 +22,7 @@ article.tweet header {
   height: 70px;
 }
 
-article.tweet header .avatar {
+#tweets-container article.tweet header .avatar {
   border-radius: 5px;
   width: 50px;
   height: 50px;
@@ -26,19 +30,19 @@ article.tweet header .avatar {
   float: left;
 }
 
-article.tweet header .name {
+#tweets-container article.tweet header .name {
   margin-top: 10px;
   float: left;
 }
 
-article.tweet header .handle {
+#tweets-container article.tweet header .handle {
   margin: 20px 10px 0 0;
   color: #808080;
   font-size: 0.8em;
   float: right;
 }
 
-article.tweet p.tweet-text {
+#tweets-container article.tweet p.tweet-text {
   margin: 0;
   padding: 30px 20px 30px 20px;
   border-bottom: 1px solid #d3d3d3;
@@ -46,11 +50,11 @@ article.tweet p.tweet-text {
   clear: both;
 }
 
-article.tweet footer {
+#tweets-container article.tweet footer {
   padding: 10px;
 }
 
-article.tweet footer .days-ago {
+#tweets-container article.tweet footer .days-ago {
   font-size: 0.7em;
 }
 
@@ -58,5 +62,5 @@ article.tweet footer .social {
   height: 20px;
   width: auto;
   float: right;
-  display: none;
+  visibility: hidden;
 }

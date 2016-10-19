@@ -29,9 +29,14 @@ $(document).ready(function () {
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     $('#tweets-container').html('');
+    var list = [];
     tweets.forEach(function (tweet) {
       var $tweet = createTweetElement(tweet);
-      $('#tweets-container').append($tweet);
+      list.push($tweet);
+    });
+
+    list.reverse().forEach(function (tweet) {
+      $('#tweets-container').append(tweet);
     });
 
     // faster way
