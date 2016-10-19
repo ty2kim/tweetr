@@ -20,3 +20,7 @@
   line-height: 80px;
   padding-left: 10px;
 }
+
+#nav-bar .button {
+  float: right;
+}
