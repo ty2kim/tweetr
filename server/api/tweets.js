@@ -10,10 +10,12 @@ const tweets  = express.Router();
 module.exports = function (db) { // db = dbMethods object(function) from db.js
 
   tweets.get('/', function (req, res) {
-    let tweets = db.getTweets();
+    db.getTweets((tweets) => {
+      res.json(tweets);
+    });
 
-    // simulate delay
-    setTimeout(function () { return res.json(tweets); }, 300);
+    // let tweeets = db.getTweets();
+    // setTimeout(function () { return res.json(tweets); }, 300);
   });
 
   tweets.post('/', function (req, res) {
