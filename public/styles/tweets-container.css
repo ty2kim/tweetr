@@ -2,7 +2,7 @@
   border-radius: 5px;
   margin: 2em;
   border: 1px solid #d3d3d3;
-  opacity: 0.8;
+  opacity: 0.7;
 }
 
 #tweets-container article:hover {
@@ -10,7 +10,7 @@
   opacity: 1;
 }
 
-#tweets-container article:hover footer .social {
+#tweets-container article:hover footer .fa {
   visibility: visible;
 }
 
@@ -58,9 +58,11 @@
   font-size: 0.7em;
 }
 
-article.tweet footer .social {
+article.tweet footer .fa {
   height: 20px;
   width: auto;
   float: right;
+  margin-left: 10px;
+  color: #49e7ec;
   visibility: hidden;
 }
