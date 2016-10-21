@@ -66,3 +66,7 @@ article.tweet footer .fa {
   color: #49e7ec;
   visibility: hidden;
 }
+
+article.tweet footer .hover_like {
+  color: #ff0000;
+}
