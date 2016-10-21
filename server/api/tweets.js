@@ -13,9 +13,6 @@ module.exports = function (db) { // db = dbMethods object(function) from db.js
     db.getTweets((tweets) => {
       res.json(tweets);
     });
-
-    // let tweeets = db.getTweets();
-    // setTimeout(function () { return res.json(tweets); }, 300);
   });
 
   tweets.post('/', function (req, res) {
