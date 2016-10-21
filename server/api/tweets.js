@@ -1,6 +1,7 @@
 'use strict';
 
 const User    = require('../lib/user-helper');
+const Tweet   = require('../lib/tweet-helper');
 const express = require('express');
 const tweets  = express.Router();
 
@@ -10,8 +11,8 @@ const tweets  = express.Router();
 module.exports = function (db) { // db = dbMethods object(function) from db.js
 
   tweets.get('/', function (req, res) {
-    db.getTweets((tweets) => {
-      res.json(tweets);
+    db.getTweets((data) => {
+      res.json(data);
     });
   });
 
@@ -22,12 +23,12 @@ module.exports = function (db) { // db = dbMethods object(function) from db.js
     }
 
     const user = req.body.user ? req.body.user : User.generateRandomUser();
+    const tweetId = Tweet.generateRandomString();
     const tweet = {
       user: user,
-      content: {
-        text: req.body.text,
-      },
-      created_at: Date.now(),
+      content: [
+        { id: tweetId, text: req.body.text, created_at: Date.now(), likes: 0, liked_people: [] },
+      ],
     };
     db.saveTweet(tweet);
     return res.send();

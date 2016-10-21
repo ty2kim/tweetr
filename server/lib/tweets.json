@@ -9,11 +9,14 @@
       },
       "handle": "@SirIsaac"
     },
-    "content": {
-      "text": "If I have seen further it is by standing on the shoulders of giants"
-    },
-    "created_at": 1461116232227,
-    "likes": 0
+    "content": [
+      { "id": "NF9Y6r",
+        "text": "If I have seen further it is by standing on the shoulders of giants",
+        "created_at": 1461116232227,
+        "likes": 0,
+        "liked_people": []
+      }
+    ]
   },
   {
     "user": {
@@ -24,11 +27,14 @@
         "large":   "https://vanillicon.com/7b89b0d8280b93e2ba68841436c0bebc_200.png"
       },
       "handle": "@rd" },
-    "content": {
-      "text": "Je pense , donc je suis"
-    },
-    "created_at": 1461113959088,
-    "likes": 10
+    "content": [
+      { "id": "e0HXSk",
+        "text": "Je pense , donc je suis",
+        "created_at": 1461113959088,
+        "likes": 10,
+        "liked_people": []
+      }
+    ]
   },
   {
     "user": {
@@ -40,10 +46,13 @@
       },
       "handle": "@johann49"
     },
-    "content": {
-      "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit."
-    },
-    "created_at": 1461113796368,
-    "likes": 100
+    "content": [
+      { "id": "ZIXfwe",
+        "text": "Es ist nichts schrecklicher als eine tätige Unwissenheit.",
+        "created_at": 1461113796368,
+        "likes": 100,
+        "liked_people": []
+      }
+    ]
   }
 ]

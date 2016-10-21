@@ -24,17 +24,18 @@ $(document).ready(function () {
     }
   });
 
-  function renderTweets(tweets) {
+  function renderTweets(data) {
     // loops through tweets
     // calls createTweetElement for each tweet
     // takes return value and appends it to the tweets container
     $('#tweets-container').html('');
     var list = [];
-    tweets.forEach(function (tweet) {
-      var $tweet = createTweetElement(tweet);
+    data.forEach(function (user) {
+      var $tweet = createTweetElement(user);
       list.push($tweet);
     });
 
+    // lower created_at, old tweet
     list.reverse().forEach(function (tweet) {
       $('#tweets-container').append(tweet);
     });
@@ -44,22 +45,22 @@ $(document).ready(function () {
     // $('#tweets-container').append(tweets.join(''));
   }
 
-  function createTweetElement(tweet) {
-    var $tweet = $('<article>').addClass('tweet');
+  function createTweetElement(data) {
+    var $tweet = $('<article>').addClass('tweet').data('tweet_id', data.content[0].id);
     var $header = $('<header>');
-    var $avatar = $('<img>').addClass('avatar').attr('src', tweet.user.avatars.regular);
-    var $name = $('<h2>').addClass('name').text(tweet.user.name);
-    var $handle = $('<span>').addClass('handle').text(tweet.user.handle);
-    var $tweetText = $('<p>').addClass('tweet-text').text(tweet.content.text);
+    var $avatar = $('<img>').addClass('avatar').attr('src', data.user.avatars.regular);
+    var $name = $('<h2>').addClass('name').text(data.user.name);
+    var $handle = $('<span>').addClass('handle').text(data.user.handle);
+    var $tweetText = $('<p>').addClass('tweet-text').text(data.content[0].text);
     var $footer = $('<footer>');
     var today = new Date();
-    var dateCreated = new Date(tweet.created_at);
+    var dateCreated = new Date(data.content[0].created_at);
     var diffDays = Math.round((today - dateCreated) / 86400000);
     var $daysAgo = $('<span>').addClass('days-ago').text(diffDays + ' days ago');
     var $flag = $('<i>').addClass('fa fa-flag').attr('aria-hidden', 'true');
     var $retweet = $('<i>').addClass('fa fa-retweet').attr('aria-hidden', 'true');
     var $heart = $('<i>').addClass('fa fa-heart').attr('aria-hidden', 'true');
-    var $likes = $('<span>').addClass('likes').text(' Likes');
+    var $likes = $('<span>').addClass('likes').data('num_likes', data.content[0].likes).text(data.content[0].likes + ' likes');
 
     $header.append($avatar).append($name).append($handle);
     $footer.append($daysAgo).append($heart).append($retweet).append($flag).append($likes);
@@ -71,8 +72,8 @@ $(document).ready(function () {
     $.ajax({
       url: '/tweets',
       method: 'GET',
-      success: function (tweets) {
-        renderTweets(tweets);
+      success: function (data) {
+        renderTweets(data);
       },
     });
   }

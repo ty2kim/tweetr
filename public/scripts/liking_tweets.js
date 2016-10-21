@@ -1,13 +1,12 @@
 $(document).ready(function () {
   $('section').on('click', 'article footer .fa-heart', function (event) {
     $(this).toggleClass('liked');
-    //var $tweet = $(this).closest('.tweet');
-    //var curLikes = $tweet.data('likes');
-
-
-    // use awesome font for 'like'
-    // think of a way to use custome data
-    // what should be the url for this (REST)
+    var $tweetId = $(this).closest('article').data('tweet_id');
+    var $likes = $(this).closest('footer').find('.likes');
+    var numLikes = $likes.data('num_likes');
+    $(this).hasClass('liked') ? numLikes++ : numLikes--;
+    $likes.data('num_likes', numLikes);
+    $likes.text(numLikes + ' likes');
 
     // var nextLikes = $(this).closest('.tweet').data('likes') + 1;
     // $.ajax({
