@@ -1,0 +1,25 @@
+section.new-tweet {
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 2em;
+  border: 1px solid #d3d3d3;
+  padding: 10px;
+
+  h2 {
+    border-bottom: 2px solid #244751;
+    margin-top: 0;
+  }
+
+  form {
+    textarea {
+      width: 100%;
+      padding: 5px;
+    }
+    .counter {
+      float: right;
+    }
+    .exceed-limit {
+      color: #ff0000;
+    }
+  }
+}

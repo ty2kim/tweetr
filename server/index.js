@@ -4,6 +4,7 @@ const PORT        = 8080;
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const app         = express();
+const sassMiddleware = require('node-sass-middleware');
 
 const tweetsApi  = require('./api/tweets');
 const db         = require('./lib/db');
@@ -12,6 +13,14 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // serving static files (index.html etc) in express
 // https://expressjs.com/en/starter/static-files.html
+app.use(sassMiddleware({
+    /* Options */
+    src: __dirname + '/../sass',
+    dest: __dirname + '/../public/',
+    debug: true,
+    outputStyle: 'compressed',
+  }));
+
 app.use(express.static('public'));
 
 // db.connect = function(onConnect) { onConnect(dbMethods); }

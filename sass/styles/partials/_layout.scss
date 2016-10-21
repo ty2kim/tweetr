@@ -1,0 +1,22 @@
+html {
+  box-sizing: border-box;
+  font-family: 'Roboto Condensed', sans-serif;
+
+  body {
+    margin: 0;
+    color: #244751;
+    background-color: #eee;
+
+    main {
+      width: 450px;
+      margin: auto;
+      background-color: #fff;
+      padding-top: 140px;
+      padding-bottom: 2em;
+    }
+  }
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

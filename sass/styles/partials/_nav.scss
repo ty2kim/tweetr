@@ -1,0 +1,41 @@
+#nav-bar {
+  position: fixed;
+  background-color: #00a087;
+  color: #e8fdff;
+  height: 80px;
+  width: 100%;
+  padding: 0 2em 0 2em;
+  z-index: 1;
+
+  .logo {
+    width: 80px;
+    height: 80px;
+    float: left;
+  }
+
+  .header {
+    float: left;
+    font-size: 2em;
+    line-height: 80px;
+    padding-left: 10px;
+  }
+
+  .button {
+    float: right;
+    background-color: #d0fff8;
+    border: solid 2px #000;
+    border-radius: 5px;
+    margin: 10px 0 10px 0;
+    padding: 10px;
+    width: 150px;
+    height: 60px;
+    color: #00a087;
+    text-align: center;
+    font-size: 1.5em;
+
+    &:hover {
+      background-color: #fff;
+      cursor: pointer;
+    }
+  }
+}

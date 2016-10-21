@@ -59,8 +59,10 @@ $(document).ready(function () {
     var $flag = $('<i>').addClass('fa fa-flag').attr('aria-hidden', 'true');
     var $retweet = $('<i>').addClass('fa fa-retweet').attr('aria-hidden', 'true');
     var $heart = $('<i>').addClass('fa fa-heart').attr('aria-hidden', 'true');
+    var $likes = $('<span>').addClass('likes').text(' Likes');
+
     $header.append($avatar).append($name).append($handle);
-    $footer.append($daysAgo).append($heart).append($retweet).append($flag);
+    $footer.append($daysAgo).append($heart).append($retweet).append($flag).append($likes);
     $tweet.append($header).append($tweetText).append($footer);
     return $tweet;
   }
