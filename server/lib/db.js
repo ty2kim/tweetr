@@ -20,12 +20,11 @@ MongoClient.connect(MONGODB_URI, (err, mongoInstance) => {
 
 const dbMethods = {
   saveTweet: (data) => {
-    //db.tweets.push(data);
     db.collection('tweets').insert(data);
     return true;
   },
 
-  getTweets: function (cb) {
+  getTweets: (cb) => {
     // why use callback
     // http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call?noredirect=1&lq=1
     db.collection('tweets').find().toArray((err, results) => {
@@ -33,6 +32,13 @@ const dbMethods = {
         return a.created_at - b.created_at;
       }));
     });
+  },
+
+  updateTweet: (id, likes) => {
+    const query = { 'content.id': id };
+    const set = { $set: { likes: likes } };
+    db.collection('tweets').update(query, set);
+    return true;
   },
 };
 

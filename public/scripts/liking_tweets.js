@@ -7,11 +7,14 @@ $(document).ready(function () {
     $(this).hasClass('liked') ? numLikes++ : numLikes--;
     $likes.data('num_likes', numLikes);
     $likes.text(numLikes + ' likes');
-
+    var jsonData = { tweet_id: $tweetId, num_likes: numLikes };
     $.ajax({
       url: '/tweets',
       method: 'PUT',
-      data: { $tweetId, numLikes },
+      data: jsonData,
+      success: function () {
+        console.log('success');
+      },
     });
   });
 

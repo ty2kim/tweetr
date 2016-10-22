@@ -39,12 +39,17 @@ module.exports = function (db) { // db = dbMethods object(function) from db.js
     return res.send();
   });
 
-  // tweets.put('/', function (req, res) {
-  //   if (!req.body.text) {
-  //     res.status(400);
-  //     return res.send("{'error': 'invalid request'}\n");
-  //   }
-  // });
+  tweets.put('/', function (req, res) {
+    if (!req.body) {
+      res.status(400);
+      return res.send("{'error': 'invalid request'}\n");
+    }
+
+    var id = req.body.tweet_id;
+    var likes = req.body.num_likes;
+    db.updateTweet(id, likes);
+    res.send();
+  });
 
   return tweets;
 
