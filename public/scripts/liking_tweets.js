@@ -8,12 +8,11 @@ $(document).ready(function () {
     $likes.data('num_likes', numLikes);
     $likes.text(numLikes + ' likes');
 
-    // var nextLikes = $(this).closest('.tweet').data('likes') + 1;
-    // $.ajax({
-    //   url: '/tweets',
-    //   method: 'PUT',
-    //   data: nextLikes,
-    // });
+    $.ajax({
+      url: '/tweets',
+      method: 'PUT',
+      data: { $tweetId, numLikes },
+    });
   });
 
   $('section').on('mouseenter', 'article footer .fa-heart', function (event) {

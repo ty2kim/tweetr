@@ -29,7 +29,9 @@ const dbMethods = {
     // why use callback
     // http://stackoverflow.com/questions/14220321/how-do-i-return-the-response-from-an-asynchronous-call?noredirect=1&lq=1
     db.collection('tweets').find().toArray((err, results) => {
-      cb(results.sort(function (a, b) { return a.content[0].created_at - b.content[0].created_at; }));
+      cb(results.sort(function (a, b) {
+        return a.created_at - b.created_at;
+      }));
     });
   },
 };

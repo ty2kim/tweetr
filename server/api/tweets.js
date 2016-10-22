@@ -26,9 +26,14 @@ module.exports = function (db) { // db = dbMethods object(function) from db.js
     const tweetId = Tweet.generateRandomString();
     const tweet = {
       user: user,
-      content: [
-        { id: tweetId, text: req.body.text, created_at: Date.now(), likes: 0, liked_people: [] },
-      ],
+      content:
+      {
+        id: tweetId,
+        text: req.body.text,
+      },
+      created_at: Date.now(),
+      likes: 0,
+      liked_people: [],
     };
     db.saveTweet(tweet);
     return res.send();
