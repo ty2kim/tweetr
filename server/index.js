@@ -1,6 +1,7 @@
 'use strict';
 
 const PORT        = 8080;
+require('dotenv').config();
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const app         = express();

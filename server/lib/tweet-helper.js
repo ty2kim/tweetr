@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = {
   generateRandomString: () => {
     const length = 6;

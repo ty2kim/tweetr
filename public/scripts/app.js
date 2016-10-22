@@ -9,6 +9,7 @@ $(document).ready(function () {
     event.preventDefault();
     var counter = +$(this).find('.counter').text();
     var $text = $(this).find('textarea');
+
     if (counter < 0) {
       alert('maximum tweet is 140');
     } else if (!$text.val()) {
