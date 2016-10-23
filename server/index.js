@@ -1,7 +1,7 @@
 'use strict';
 
-require('dotenv').config();
-const PORT        = 8080;
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
+
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const app         = express();
@@ -9,6 +9,8 @@ const sassMiddleware = require('node-sass-middleware');
 
 const tweetsApi  = require('./api/tweets');
 const db         = require('./lib/db');
+
+app.set('port', (process.env.PORT || 8080));
 
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -35,6 +37,6 @@ db.connect((dbInstance) => {
   app.use('/tweets', tweetsApi(dbInstance));
 });
 
-app.listen(PORT, () => {
-  console.log('Example app listening on port ' + PORT);
+app.listen(app.get('port'), () => {
+  console.log('Example app listening on port ' + app.get('port'));
 });
